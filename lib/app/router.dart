@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:go_router_deep_link/app/scaffold_with_bottom_nav_bar.dart';
+import 'package:go_router_deep_link/screens/animation_sample.dart';
 import 'package:go_router_deep_link/screens/car_detail_screen.dart';
 import 'package:go_router_deep_link/screens/car_list_screen.dart';
 import 'package:go_router_deep_link/screens/login_screen.dart';
@@ -12,6 +13,7 @@ import 'go_router_refresh_stream.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final _carTabNavigatorKey = GlobalKey<NavigatorState>();
+final _animationTabNavigatorKey = GlobalKey<NavigatorState>();
 final _profileTabNavigatorKey = GlobalKey<NavigatorState>();
 
 GoRouter createRouter(AuthProvider authProvider) {
@@ -57,6 +59,15 @@ GoRouter createRouter(AuthProvider authProvider) {
                     },
                   ),
                 ],
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            navigatorKey: _animationTabNavigatorKey,
+            routes: [
+              GoRoute(
+                path: '/animation',
+                builder: (context, state) => const AnimationScreen(),
               ),
             ],
           ),

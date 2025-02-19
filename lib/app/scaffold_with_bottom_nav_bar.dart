@@ -16,6 +16,10 @@ class ScaffoldWithBottomNavBar extends StatelessWidget {
             icon: Icon(Icons.directions_car),
             label: 'Cars',
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.animation),
+            label: 'Animation',
+          ),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
         currentIndex: navigationShell.currentIndex,
